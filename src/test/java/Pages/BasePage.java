@@ -47,8 +47,9 @@ public class BasePage {
         List<WebElement> suggestions = Web.getDriver().findElements(locator);
         for (WebElement suggestion : suggestions) {
             if (suggestion.getText().equalsIgnoreCase(word)) {
-                nameOfLocation =suggestion.getText();
                 suggestion.click();
+
+                nameOfLocation =suggestion.getText();
 
                 break;
             }
@@ -56,9 +57,19 @@ public class BasePage {
     }
 
     public String getTextFromBox(By locator){
-        String textFromWeb= findElementUsingFluentWait(locator).getText();
-        return textFromWeb;
+        return findElementUsingFluentWait(locator).getText();
+
+
+
+
+
+
     }
+
+//    public String getTextFromBox(By locator){
+//        String textFromWeb= findElementUsingFluentWait(locator).getText();
+//        return textFromWeb;
+//    }
 }
 
 

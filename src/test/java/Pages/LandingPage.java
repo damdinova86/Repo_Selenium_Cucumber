@@ -10,10 +10,10 @@ import java.util.List;
 public class LandingPage extends BasePage {
 
     //Locators
-    By searchButton = By.xpath("//button[@type='submit']");
-    By checkingCalender = By.id("qf-0q-localised-check-in");
-    By checkouCalender = By.id("qf-0q-localised-check-out");
-    By allCalenderDates = By.xpath("");
+//    By searchButton = By.xpath("//button[@type='submit']");
+//    By checkingCalender = By.id("qf-0q-localised-check-in");
+//    By checkouCalender = By.id("qf-0q-localised-check-out");
+//    By allCalenderDates = By.xpath("");
 
 
     By clear = By.id("qf-0q-destination");
@@ -36,17 +36,23 @@ public class LandingPage extends BasePage {
         clickThis(clickSearch);
     }
 
-    public boolean verifySearchHeaderName() {
+    public void verifySearchHeaderName() {
         boolean verifyName = getWebpageTitle().contains(nameOfLocation);
          Assert.assertTrue(verifyName, "It has different name");
-        return true;
+
     }
 
-    public boolean verifyDestination(){
-        String location = getTextFromBox(destination);
-        Assert.assertEquals(location,nameOfLocation,"Not the same");
+    public void verifyDestination(){
+        System.out.println(getTextFromBox(destination)+"1");
+        System.out.println(nameOfLocation+"2");
 
-        return true;
+//        Assert.assertEquals(,nameOfLocation,"Don't match");
+
+
+//        String location = getTextFromBox(destination);
+//        Assert.assertEquals(location,nameOfLocation,"Not the same");
+
+
     }
 
 

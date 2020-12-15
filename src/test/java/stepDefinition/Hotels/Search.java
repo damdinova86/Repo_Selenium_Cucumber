@@ -24,15 +24,15 @@ public class Search {
         lPage.clickSearchOnLakeG();
     }
     @Then("^I verify search header contains text selected  from  autosuggestion$")
-    public boolean verifySearchHeader(){
-         boolean ver= lPage.verifySearchHeaderName();
-        return ver;
+    public void verifySearchHeader(){
+          lPage.verifySearchHeaderName();
+
     }
 
     @Then("^I verify text under 'Destination, property, or landmark' is same  as text selected$")
-    public boolean verifyDest(){
-        boolean verDest = lPage.verifyDestination();
-        return verDest;
+    public void verifyDest(){
+         lPage.verifyDestination();
+
     }
 
 }
